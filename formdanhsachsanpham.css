@@ -1,9 +1,12 @@
+body {
+  background-color: lightgray;
+  font-family: "Arial";
+}
+
 ol {
   list-style-type: none;
 }
-body {
-  background-color: lightgray;
-}
+
 nav,
 ol,
 ul {
@@ -14,11 +17,13 @@ ul {
   flex: 1;
   gap: 10px;
 }
+
 th {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 .add-sanpham {
   position: relative; /* Để cố định vị trí của nút */
   left: 1320px;
@@ -54,6 +59,7 @@ th {
 .dongbosanpham:hover {
   opacity: 0.8;
 }
+
 .form-sanpham {
   background-color: white;
   margin-top: 20px;
@@ -103,6 +109,7 @@ th {
 #finditem {
   width: 20%;
 }
+
 .input-field {
   width: 100%;
   padding: 10px;
@@ -117,11 +124,13 @@ input[type="text"]:focus {
   border: 1px solid rgb(0, 110, 255);
   outline: none;
 }
+
 .input-field:hover {
   border: 1px solid rgb(0, 110, 255);
   outline: none;
   transition: all 0.75s ease;
 }
+
 .loc {
   position: relative; /* Để cố định vị trí của nút */
   overflow: hidden; /* Khoảng cách từ trên */
@@ -134,74 +143,88 @@ input[type="text"]:focus {
   border-radius: 5px; /* Bo góc nút */
   cursor: pointer; /* Hiển thị con trỏ khi di chuột */
 }
+
 td {
   border-bottom: 1px solid black;
 }
+
 th,
 td {
   font-size: 14px;
 }
+
 th:nth-child(1),
 td:nth-child(1) {
   padding-left: 20px;
   padding-right: 20px;
 }
+
 th:nth-child(2),
 td:nth-child(2) {
   padding-left: 20px;
   padding-right: 20px;
   text-align: left;
 }
+
 th:nth-child(3),
 td:nth-child(3) {
   padding-left: 20px;
   padding-right: 20px;
 }
+
 th:nth-child(4),
 td:nth-child(4) {
   padding-left: 20px;
   padding-right: 20px;
   text-align: left;
 }
+
 th:nth-child(5),
 td:nth-child(5) {
   padding-left: 20px;
   padding-right: 20px;
   text-align: right;
 }
+
 th:nth-child(6),
 td:nth-child(6) {
   padding-left: 20px;
   padding-right: 20px;
   text-align: left;
 }
+
 th:nth-child(7),
 td:nth-child(7) {
   padding-left: 20px;
   padding-right: 20px;
   text-align: right;
 }
+
 th:nth-child(8),
 td:nth-child(8) {
   padding-left: 40px;
   padding-right: 40px;
 }
+
 th:nth-child(9),
 td:nth-child(9) {
   padding-left: 40px;
   padding-right: 40px;
 }
+
 th:nth-child(10),
 td:nth-child(10) {
   padding-left: 40px;
   padding-right: 40px;
 }
+
 img {
   width: 60px; /* Đặt chiều rộng ảnh */
   height: 60px; /* Đặt chiều cao ảnh */
   object-fit: cover;
   padding: 10px; /* Đảm bảo ảnh phủ hết không gian mà không bị biến dạng */
 }
+
 .container {
   display: flex;
   flex-direction: column;
@@ -272,14 +295,17 @@ img {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
 #toggleXoa {
   font-size: 20px;
   color: #dc3545;
 }
+
 #togglesua {
   font-size: 20px;
   color: darkorange;
 }
+
 #toggleChitiet {
   font-size: 20px;
   color: rgb(0, 132, 255);
@@ -305,6 +331,7 @@ button {
   width: 100px;
   height: 40px;
 }
+
 .input-container {
   display: inline-block;
   margin-right: 15px;
@@ -319,6 +346,7 @@ button {
   width: 100%;
   margin: 0 auto;
 }
+
 .form-row {
   margin-left: 30px;
   display: flex;
@@ -347,6 +375,7 @@ input {
 .hidden {
   display: none;
 }
+
 #input1 {
   width: 440px;
 }
