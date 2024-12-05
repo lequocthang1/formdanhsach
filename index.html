@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Form with Logo and Password Icon</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+      <link
+      rel="stylesheet"
+      href="styles.css"
+    />
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial;
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+      }
+
+      .container {
+        display: flex;
+        width: 100%;
+        height: 100vh;
+      }
+
+      .left {
+        flex: 1;
+        background-image: url("image/34.png");
+        position: relative;
+        background-repeat: no-repeat;
+        margin-top: 15%;
+        padding-right: 50px;
+        left: 300px;
+      }
+
+      .vertical-line {
+        width: 2px;
+        background-color: #ccc;
+        height: 75%;
+        margin-top: 5%;
+      }
+
+      .right {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        padding: 20px;
+      }
+
+      .login-container {
+        width: 100%;
+        padding: 30px;
+        background-color: white;
+
+        margin-right: 10px;
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .input-field {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      input[type="text"]:focus,
+      input[type="password"]:focus {
+        border: 1px solid orange;
+        outline: none;
+      }
+
+      .password-container {
+        position: relative;
+      }
+
+      .password-icon {
+        position: absolute;
+        top: 60%;
+        right: 10px;
+        transform: translateY(-50%);
+        cursor: pointer;
+      }
+
+      .login-button {
+        width: 100%;
+        padding: 10px;
+        background-color: orange;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .login-button:hover {
+        opacity: 0.8;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+        }
+
+        .left,
+        .right {
+          flex: none;
+          width: 100%;
+          margin-bottom: 20px;
+        }
+
+        .vertical-line {
+          display: none;
+        }
+      }
+      @media (max-width: 1366px) {
+        .container {
+          flex-direction: column;
+        }
+
+        .left,
+        .right {
+          flex: none;
+          width: 100%;
+          margin-bottom: 20px;
+        }
+
+        .vertical-line {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left"></div>
+
+      <div class="vertical-line"></div>
+
+      <div class="right">
+        <div class="login-container">
+          <h2>
+            <img
+              src="image/addy1.png"
+              alt="Logo"
+              width="300px"
+              height="200px"
+            />
+          </h2>
+          <h4>Đăng nhập vào</h4>
+          <br />
+          <h1>Addy Admin Dashboard</h1>
+          <br />
+          <br />
+          <br />
+          <form id="login-form">
+            <label for="username">Tên đăng nhập</label><br />
+            <input
+              type="text"
+              id="username"
+              class="input-field"
+              placeholder="Nhập tên đăng nhập của bạn"
+              required
+            />
+
+            <div class="password-container">
+              <label for="password">Mật khẩu</label><br />
+              <input
+                type="password"
+                id="password"
+                class="input-field"
+                placeholder="Nhập mật khẩu của bạn"
+                required
+              />
+              <i
+                class="fas fa-eye password-icon"
+                id="togglePassword"
+                onclick="togglePassword()"
+              ></i>
+            </div>
+
+            <button type="submit" class="login-button" onclick="login()">
+              Đăng nhập
+            </button>
+            <div class="error-message" id="error-message"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function togglePassword() {
+        const passwordInput = document.getElementById("password");
+        const passwordIcon = document.getElementById("togglePassword");
+        if (passwordInput.type === "password") {
+          passwordInput.type = "text";
+          passwordIcon.classList.remove("fa-eye");
+          passwordIcon.classList.add("fa-eye-slash");
+        } else {
+          passwordInput.type = "password";
+          passwordIcon.classList.remove("fa-eye-slash");
+          passwordIcon.classList.add("fa-eye");
+        }
+      }
+
+      const validUsername = "admin@thanhsinh.com";
+      const validPassword = "123456";
+
+      document
+        .getElementById("login-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const username = document.getElementById("username").value;
+          const password = document.getElementById("password").value;
+
+          if (username === "admin@thanhsinh.com" && password === "123456") {
+            window.location.href = "formdanhsachsanpham.html";
+          } else {
+            alert("Invalid username or password!");
+          }
+        });
+    </script>
+  </body>
+</html>

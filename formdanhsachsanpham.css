@@ -1,0 +1,370 @@
+ol {
+  list-style-type: none;
+}
+body {
+  background-color: lightgray;
+}
+nav,
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex: 1;
+  gap: 10px;
+}
+th {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.add-sanpham {
+  position: relative; /* Để cố định vị trí của nút */
+  left: 1320px;
+  padding: 10px 20px; /* Cỡ nút */
+  font-size: 16px; /* Kích thước chữ */
+  background-color: orange; /* Màu nền */
+  color: white; /* Màu chữ */
+  border: none;
+  border-radius: 5px; /* Bo góc nút */
+  cursor: pointer; /* Hiển thị con trỏ khi di chuột */
+  z-index: 10;
+  overflow: hidden;
+}
+
+/* Thêm hiệu ứng khi di chuột lên nút */
+.add-sanpham:hover {
+  opacity: 0.8;
+}
+
+.dongbosanpham {
+  position: relative; /* Để cố định vị trí của nút */
+  left: 1300px;
+  padding: 10px 20px; /* Cỡ nút */
+  font-size: 16px; /* Kích thước chữ */
+  background-color: rgb(25, 128, 238); /* Màu nền */
+  color: white; /* Màu chữ */
+  border: none;
+  border-radius: 5px; /* Bo góc nút */
+  cursor: pointer; /* Hiển thị con trỏ khi di chuột */
+  overflow: hidden;
+}
+
+.dongbosanpham:hover {
+  opacity: 0.8;
+}
+.form-sanpham {
+  background-color: white;
+  margin-top: 20px;
+  border-radius: 10px;
+  width: 100%; /* Form sẽ chiếm toàn bộ chiều rộng của container */
+  max-width: 1900px; /* Đặt chiều rộng tối đa cho form */
+}
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-button {
+  width: 60px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Hiệu ứng thay đổi màu nền */
+}
+
+/* Nút con */
+.toggle-button:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #fff;
+  transition: left 0.3s ease; /* Hiệu ứng chuyển động của nút con */
+}
+
+/* Khi bật (checked) */
+.toggle-button.active {
+  background-color: rgb(0, 102, 255); /* Màu nền khi bật */
+}
+
+.toggle-button.active:before {
+  left: 35px; /* Vị trí của nút con khi bật */
+}
+
+#finditem {
+  width: 20%;
+}
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  box-sizing: border-box;
+  margin-left: 20px;
+}
+
+input[type="text"]:focus {
+  border: 1px solid rgb(0, 110, 255);
+  outline: none;
+}
+.input-field:hover {
+  border: 1px solid rgb(0, 110, 255);
+  outline: none;
+  transition: all 0.75s ease;
+}
+.loc {
+  position: relative; /* Để cố định vị trí của nút */
+  overflow: hidden; /* Khoảng cách từ trên */
+  left: 0px; /* Khoảng cách từ phải */
+  padding: 10px 20px; /* Cỡ nút */
+  font-size: 16px; /* Kích thước chữ */
+  background-color: gray; /* Màu nền */
+  color: white; /* Màu chữ */
+  border: none;
+  border-radius: 5px; /* Bo góc nút */
+  cursor: pointer; /* Hiển thị con trỏ khi di chuột */
+}
+td {
+  border-bottom: 1px solid black;
+}
+th,
+td {
+  font-size: 14px;
+}
+th:nth-child(1),
+td:nth-child(1) {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+th:nth-child(2),
+td:nth-child(2) {
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: left;
+}
+th:nth-child(3),
+td:nth-child(3) {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+th:nth-child(4),
+td:nth-child(4) {
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: left;
+}
+th:nth-child(5),
+td:nth-child(5) {
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: right;
+}
+th:nth-child(6),
+td:nth-child(6) {
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: left;
+}
+th:nth-child(7),
+td:nth-child(7) {
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: right;
+}
+th:nth-child(8),
+td:nth-child(8) {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+th:nth-child(9),
+td:nth-child(9) {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+th:nth-child(10),
+td:nth-child(10) {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+img {
+  width: 60px; /* Đặt chiều rộng ảnh */
+  height: 60px; /* Đặt chiều cao ảnh */
+  object-fit: cover;
+  padding: 10px; /* Đảm bảo ảnh phủ hết không gian mà không bị biến dạng */
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dropdown-btn {
+  padding: 10px 20px;
+  font-size: 10px;
+  cursor: pointer;
+  border: 0px;
+  border-radius: 7px;
+  background-color: #fff;
+  width: 107px;
+  height: 40px;
+  text-align: center;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+  background-color: #28a745;
+  color: white;
+}
+
+.dropdown-btn:hover {
+  opacity: 0.8;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  background-color: white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.ban {
+  background-color: white;
+  color: #28a745;
+  font-weight: bold;
+}
+
+.ngungban {
+  background-color: white;
+  color: #dc3545;
+  font-weight: bold;
+}
+
+.dropdown-content a.ban:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown-content a.ngungban:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+#toggleXoa {
+  font-size: 20px;
+  color: #dc3545;
+}
+#togglesua {
+  font-size: 20px;
+  color: darkorange;
+}
+#toggleChitiet {
+  font-size: 20px;
+  color: rgb(0, 132, 255);
+}
+
+.container {
+  text-align: center;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.label {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+  width: 100px;
+  height: 40px;
+}
+.input-container {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+.form-row {
+  margin-left: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Khoảng cách giữa các nhóm */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column; /* Label nằm trên input */
+  align-items: flex-start;
+}
+
+label {
+  margin-bottom: 5px; /* Khoảng cách giữa label và input */
+  font-weight: bold;
+}
+
+input {
+  padding: 9px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+#input1 {
+  width: 440px;
+}
+
+.ripple {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple-animation 1.5s linear;
+  pointer-events: none;
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
