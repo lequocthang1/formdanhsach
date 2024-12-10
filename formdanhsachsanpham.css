@@ -24,11 +24,11 @@ ul {
 th {
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;  
+  text-overflow: ellipsis;
 }
 
 .add-sanpham {
-  position: relative; /* Để cố định vị trí của nút */
+  position: relative;
   left: 1320px;
   padding: 10px 20px; /* Cỡ nút */
   font-size: 16px; /* Kích thước chữ */
@@ -47,7 +47,7 @@ th {
 }
 
 .dongbosanpham {
-  position: relative; /* Để cố định vị trí của nút */
+  position: relative;
   left: 1300px;
   padding: 10px 20px; /* Cỡ nút */
   font-size: 16px; /* Kích thước chữ */
@@ -71,12 +71,6 @@ th {
   max-width: 1900px; /* Đặt chiều rộng tối đa cho form */
 }
 
-.toggle-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .toggle-button {
   width: 60px;
   height: 30px;
@@ -85,6 +79,9 @@ th {
   position: relative;
   cursor: pointer;
   transition: background-color 0.3s ease; /* Hiệu ứng thay đổi màu nền */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Nút con */

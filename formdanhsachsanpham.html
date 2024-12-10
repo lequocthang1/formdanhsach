@@ -1,27 +1,34 @@
 <!-- FIXME: sử dụng prettier để format code -->
- <!-- FIXME: ở bài tập 5 yêu cầu lấy dữ liệu động -> phải bỏ dữ liệu tĩnh đi -->
+<!-- FIXME: ở bài tập 5 yêu cầu lấy dữ liệu động -> phải bỏ dữ liệu tĩnh đi -->
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Danh Sách Sản Phẩm</title>
-    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link rel="stylesheet" href="formdanhsachsanpham.css" />
   </head>
   <body>
     <h1>Danh sách sản phẩm</h1>
     <nav>
       <ol>
-        <li><i class="fas fa-home"></i></li>        
+        <li><i class="fas fa-home"></i></li>
         <li>/</li>
         <li>Danh sách sản phẩm</li>
-        <li> 
+        <li>
           <button class="dongbosanpham">Đồng bộ sản phẩm</button>
-          <button class="add-sanpham">+ Thêm sản phẩm</button></li>
+          <button class="add-sanpham">+ Thêm sản phẩm</button>
+        </li>
       </ol>
     </nav>
-   
+
     <form class="form-sanpham">
       <input
         type="text"
@@ -30,75 +37,77 @@
         placeholder="Tìm kiếm theo tên, mã sản phẩm,..."
         required
       />
-      <button type="button"  id="toggleButton" class="loc">
+      <button type="button" id="toggleButton" class="loc">
         <i class="fas fa-filter"></i>&nbsp;&nbsp;Lọc&nbsp;&nbsp;
-        <i class="fas fa-angle-down"> 
-        </i></button>
+        <i class="fas fa-angle-down"> </i>
+      </button>
       <div id="formElements" class="hidden">
         <div class="form-row">
           <div class="form-group">
             <label for="input1">Danh mục</label>
-            <input 
-              type="text" 
-              id="input1" 
-              name="input1" placeholder="--Chọn danh mục--"
-              />
+            <input
+              type="text"
+              id="input1"
+              name="input1"
+              placeholder="--Chọn danh mục--"
+            />
           </div>
           <div class="form-group">
             <label for="input1">Nhãn sản phẩm</label>
-            <input type="text" 
-              id="input1" 
-              name="input1" 
+            <input
+              type="text"
+              id="input1"
+              name="input1"
               placeholder="--Chọn nhãn sản phẩm--"
-              />
+            />
           </div>
           <div class="form-group">
             <label for="input1">Loại sản phẩm</label>
-            <input 
-              type="text" 
-              id="input1" 
-              name="input1" 
+            <input
+              type="text"
+              id="input1"
+              name="input1"
               placeholder="--Chọn loại sản phẩm--"
-              />
+            />
           </div>
           <div class="form-group">
             <label for="input1">Kho hàng</label>
-            <input 
-              type="text" 
-              id="input1" 
-              name="input1" 
+            <input
+              type="text"
+              id="input1"
+              name="input1"
               placeholder="--Chọn kho hàng--"
-              />
+            />
           </div>
           <div class="form-group">
             <label for="input1">Trạng thái</label>
-            <input 
-              type="text" 
-              id="input1" 
-              name="input1" 
+            <input
+              type="text"
+              id="input1"
+              name="input1"
               placeholder="--Chọn trạng thái--"
-              />
+            />
           </div>
           <div class="form-group">
             <label for="input1">Hiển thị trên app</label>
-            <input 
-              type="text" 
-              id="input1" 
-              name="input1" 
+            <input
+              type="text"
+              id="input1"
+              name="input1"
               placeholder="--Chọn trạng thái hiển thị--"
-              />
+            />
           </div>
           <div class="form-group">
             <label for="input1">Khoảng giá</label>
-            <input 
-              type="text" 
-              id="input1" 
-              name="input1" 
+            <input
+              type="text"
+              id="input1"
+              name="input1"
               placeholder="Chọn khoảng giá"
-              />
+            />
           </div>
         </div>
-        </div>
+      </div>
       <table id="data-table">
         <colgroup>
           <col />
@@ -111,356 +120,54 @@
           <col />
           <col />
           <col />
-      </colgroup>
-      </thead class="table">
-        <tr class="main">
-          <th>
-            <input type="checkbox" id="check-all" onclick="toggleCheckboxes(this)">
-          </th>
-          <th>
-          Mã sản phẩm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <i class="  fas fa-sort-amount-up-alt"></i>
-          </th>
-          <th>
-            Hình ảnh
-          </th>
-          <th>
-            Tên sản phẩm</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <i class="	fas fa-sort-amount-up-alt"></i>
-          </th>
-          <th>
-            Giá bán
-            <i class="	fas fa-sort-amount-up-alt"></i>
-          </th>
-          <th>
-            Kho hàng&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </th>
-          <th>
-            Thứ tự hiển thị
-            <i class="	fas fa-sort-amount-up-alt"></i>
-          </th>
-          <th>
-            Hiển thị trên app &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <i class="	fas fa-sort-amount-up-alt"></i>
-          </th>
-          <th>
-            Trạng thái &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <i class="	fas fa-sort-amount-up-alt"></i>
-          <th>
-            Hành động
-          </th>
-        </tr>
-        <tr>
-          <th>
-            <input type="checkbox" class="check-item" name="checkbox1">
-          </th>
-          <th>PRD0001005CD9D</th>
-          <th><img src="image/image-not-found.jpg"></th>
-          <th>test</th>
-          <th>1000đ</th>
-          <th>Kho Chuẩn</th>
-          <th>
-            10<i class="fas fa-pencil-alt"></i>
-          </th>
-          <th>
-            <div class="toggle-container">
-              <div class="toggle-button" onclick="toggleButton(this)"></div>
-            </div>
-          </th>
-          <th> 
-            <div class="container">
-              <div class="dropdown">
-                <button class="dropdown-btn" id="buttonText" onclick="toggleDropdown()">
-                  Đang Bán
-                </button>              
-                <div class="dropdown-content">
-                  <a href="#" class="ban" onclick="updateButtonText('Đang Bán', '#28a745')" >            
-                    Đang Bán
-                  </a>  
-                  <a href="#" class="ngungban" onclick="updateButtonText('Ngưng Bán', '#dc3545')" >            
-                    Ngưng Bán
-                  </a>           
-                </div>
-              </div>
-            </div>
-          </th>
-          <th> 
-            <i class="fas fa-info-circle" id="toggleChitiet" onclick="toggleChitiet()" ></i>&nbsp;  
-            <i class="far fa-edit" id="togglesua" onclick="togglesua()" ></i>&nbsp;     
-            <i class="fas fa-trash-alt" id="toggleXoa" onclick="toggleXoa()"></i>
-          </th>
-        </tr>
-        <tr>
-          <th><input type="checkbox" class="check-item" name="checkbox1"></th>
-          <th>PRD0001005CD9D</th>
-          <th><img src="image/image-not-found.jpg"></th>
-          <th>test</th>
-          <th>1000đ</th>
-          <th>Kho Chuẩn</th>
-          <th>
-            10<i class="	fas fa-pencil-alt"></i>
-          </th>
-          <th>
-            <div class="toggle-container">
-              <div class="toggle-button" onclick="toggleButton1(this)"></div>
-            </div>
-          </th>
-          <th> 
-            <div class="container">
-              <div class="dropdown">
-                <button class="dropdown-btn" id="buttonText1" onclick="toggleDropdown1()">
-                  Đang Bán
-                </button>
-                <div class="dropdown-content" id="dropdown-content">
-                  <a href="#" class="ban" onclick="updateButtonText1('Đang Bán', '#28a745')">
-                    Đang Bán
-                  </a>
-                  <a href="#" class="ngungban" onclick="updateButtonText1('Ngưng Bán', '#dc3545')">
-                    Ngưng Bán          
-                  </a>
-                </div>
-              </div>
-            </div>
-          </th>
-          <th> 
-            <i class="fas fa-info-circle" id="toggleChitiet" onclick="toggleChitiet()"></i>&nbsp;
-            <i class="far fa-edit" id="togglesua" onclick="togglesua()"></i>&nbsp;
-            <i class="fas fa-trash-alt" id="toggleXoa" onclick="toggleXoa()"></i>
-          </th>
-        </tr>
-        <tr>
-          <th><input type="checkbox" class="check-item" name="checkbox1"></th>
-          <th>PRD0001005CD9D</th>
-          <th><img src="image/image-not-found.jpg"></th>
-          <th>test</th>
-          <th>1000đ</th>
-          <th>Kho Chuẩn</th>
-          <th>
-            10<i class="	fas fa-pencil-alt"></i>
-          </th>
-          <th>
-            <div class="toggle-container">
-              <div class="toggle-button" onclick="toggleButton2(this)"></div>
-            </div>
-          </th>
-          <th> 
-            <div class="container">
-              <div class="dropdown">
-                <button class="dropdown-btn" id="buttonText2" onclick="toggleDropdown2()" >
-                  Đang Bán
-                </button>
-                <div class="dropdown-content" id="dropdown-content2">
-                  <a href="#" class="ban" onclick="updateButtonText2('Đang Bán', '#28a745')" >
-                    Đang Bán
-                  </a>
-                  <a href="#" class="ngungban" onclick="updateButtonText2('Ngưng Bán', '#dc3545')" >
-                    Ngưng Bán
-                  </a>
-                </div>
-              </div>  
-            </div>
-          </th>
-          <th> 
-            <i class="fas fa-info-circle" id="toggleChitiet" onclick="toggleChitiet()" ></i>&nbsp;
-            <i class="far fa-edit" id="togglesua" onclick="togglesua()"></i>&nbsp; 
-            <i class="fas fa-trash-alt" id="toggleXoa" onclick="toggleXoa()"></i>
-          </th>
-        </tr>
-        <tr>
-          <th><input type="checkbox" class="check-item" name="checkbox1"></th>
-          <th>PRD0001005CD9D</th>
-          <th><img src="image/image-not-found.jpg"></th>
-          <th>test</th>
-          <th>1000đ</th>
-          <th>Kho Chuẩn</th>
-          <th>
-            10<i class="	fas fa-pencil-alt"></i>
-          </th>
-          <th>
-            <div class="toggle-container">
-              <div class="toggle-button" onclick="toggleButton3(this)"></div>
-            </div>
-          </th>
-          <th> 
-            <div class="container">
-              <div class="dropdown">
-                <button class="dropdown-btn" id="buttonText3" onclick="toggleDropdown3()">
-                  Đang Bán
-                </button>
-                <div class="dropdown-content" id="dropdown-content">
-                  <a href="#" class="ban" onclick="updateButtonText3('Đang Bán', '#28a745')"> 
-                    Đang Bán
-                  </a>
-                  <a href="#" class="ngungban" onclick="updateButtonText3('Ngưng Bán', '#dc3545')">
-                    Ngưng Bán
-                  </a>
-                </div>
-              </div>
-            </div>  
-          </th>
-          <th> 
-            <i class="fas fa-info-circle" id="toggleChitiet" onclick="toggleChitiet()"></i>&nbsp;
-            <i class="far fa-edit" id="togglesua" onclick="togglesua()"></i>&nbsp; 
-            <i class="fas fa-trash-alt" id="toggleXoa" onclick="toggleXoa()"></i>
-          </th>
-        </tr>
-        <tr>
-          <th><input type="checkbox" class="check-item" name="checkbox1"></th>
-          <th>PRD0001005CD9D</th>
-          <th><img src="image/image-not-found.jpg"></th>
-          <th>test</th>
-          <th>1000đ</th>
-          <th>Kho Chuẩn</th>
-          <th>
-            10<i class="	fas fa-pencil-alt"></i>
-          </th>
-          <th>
-            <div class="toggle-container">
-              <div class="toggle-button" onclick="toggleButton4(this)"></div>
-            </div>
-          </th>
-          <th>
-            <div class="container">
-              <div class="dropdown">
-                <button class="dropdown-btn" id="buttonText4" onclick="toggleDropdown4()">
-                  Đang Bán
-                </button>
-                <div class="dropdown-content" id="dropdown-content4">
-                  <a href="#" class="ban" onclick="updateButtonText4('Đang Bán', '#28a745')">
-                    Đang Bán
-                  </a>
-                  <a href="#" class="ngungban" onclick="updateButtonText4('Ngưng Bán', '#dc3545')">
-                    Ngưng Bán
-                  </a>
-                </div>
-              </div>
-            </div>
-          </th>
-          <th> 
-            <i class="fas fa-info-circle" id="toggleChitiet" onclick="toggleChitiet()"></i>&nbsp;
-            <i class="far fa-edit" id="togglesua" onclick="togglesua()"></i>&nbsp;  
-            <i class="fas fa-trash-alt" id="toggleXoa" onclick="toggleXoa()"></i>
-          </th>
-        </tr>
-        <tr>
-          <th><input type="checkbox" class="check-item" name="checkbox1"></th>
-          <th>PRD0001005CD9D</th>
-          <th><img src="image/image-not-found.jpg"></th>
-          <th>test</th>
-          <th>1000đ</th>
-          <th>Kho Chuẩn</th>
-          <th>10<i class="	fas fa-pencil-alt"></i></th>
-          <th>
-            <div class="toggle-container">
-              <div class="toggle-button" onclick="toggleButton5(this)"></div>
-            </div>
-          </th>
-          <th> 
-            <div class="container">
-              <div class="dropdown">
-                <button class="dropdown-btn" id="buttonText5" onclick="toggleDropdown5()">
-                  Đang Bán
-                </button>
-                <div class="dropdown-content" id="dropdown-content5">
-                  <a href="#" class="ban" onclick="updateButtonText5('Đang Bán', '#28a745')">
-                    Đang Bán
-                  </a>
-                  <a href="#" class="ngungban" onclick="updateButtonText5('Ngưng Bán', '#dc3545')">
-                    Ngưng Bán
-                  </a>
-                </div>
-              </div>
-            </div>
-          </th>
-          <th> 
-            <i class="fas fa-info-circle" id="toggleChitiet" onclick="toggleChitiet()" ></i>&nbsp;
-            <i class="far fa-edit" id="togglesua" onclick="togglesua()"></i>&nbsp;
-            <i class="fas fa-trash-alt"  id="toggleXoa" onclick="toggleXoa()"></i>
-          </th>
-        </tr>
-        <tr>
-          <th><input type="checkbox" class="check-item" name="checkbox1"></th>
-          <th>PRD0001005CD9D</th>
-          <th><img src="image/image-not-found.jpg"></th>
-          <th>test</th>
-          <th>1000đ</th>
-          <th>Kho Chuẩn</th>
-          <th>
-            10<i class="	fas fa-pencil-alt"></i>
-          </th>
-          <th>
-            <div class="toggle-container">
-              <div class="toggle-button" onclick="toggleButton6(this)"></div>
-            </div>
-          </th>
-          <th> 
-            <div class="container">
-              <div class="dropdown">
-                <button class="dropdown-btn" id="buttonText6" onclick="toggleDropdown6()">
-                  Đang Bán
-                </button>
-                <div class="dropdown-content" id="dropdown-content6">
-                  <a href="#" class="ban" onclick="updateButtonText6('Đang Bán', '#28a745')">
-                    Đang Bán
-                  </a>
-                  <a href="#" class="ngungban" onclick="updateButtonText6('Ngưng Bán', '#dc3545')">  
-                    Ngưng Bán
-                  </a>
-                </div>
-              </div>
-            </div>
-          </th>
-          <th> 
-            <i class="fas fa-info-circle" id="toggleChitiet" onclick="toggleChitiet()" ></i>&nbsp;
-            <i class="far fa-edit" id="togglesua" onclick="togglesua()"></i>&nbsp; 
-            <i  class="fas fa-trash-alt" id="toggleXoa" onclick="toggleXoa()"></i>
-          </th>
-        </tr>
-        <tr>
-          <th><input type="checkbox" class="check-item" name="checkbox1"></th>
-          <th>PRD0001005CD9D</th>
-          <th><img src="image/image-not-found.jpg"></th>
-          <th>test</th>
-          <th>1000đ</th>
-          <th>Kho Chuẩn</th>
-          <th>
-            10<i class="	fas fa-pencil-alt"></i>
-          </th>
-          <th>
-            <div class="toggle-container">
-              <div class="toggle-button" onclick="toggleButton7(this)"></div>
-            </div>
-          </th>
-          <th> 
-            <div class="container">
-              <div class="dropdown">
-                <button class="dropdown-btn" id="buttonText7" onclick="toggleDropdown7()">
-                  Đang Bán
-                </button>
-                <div class="dropdown-content" id="dropdown-content7">
-                  <a href="#" class="ban" onclick="updateButtonText7('Đang Bán', '#28a745')">
-                    Đang Bán
-                  </a>
-                  <a href="#" class="ngungban" onclick="updateButtonText7('Ngưng Bán', '#dc3545')">    
-                    Ngưng Bán
-                  </a>
-                </div>
-              </div>  
-            </div>
-          </th>
-          <th> 
-            <i class="fas fa-info-circle" id="toggleChitiet" onclick="toggleChitiet()"></i>&nbsp;
-            <i class="far fa-edit" id="togglesua" onclick="togglesua()"></i>&nbsp;     
-            <i class="fas fa-trash-alt" id="toggleXoa" onclick="toggleXoa()"></i>
-          </th>
-        </tr>
-      </thead>
-<tbody>
-  
-</tbody>
+        </colgroup>
+        <thead class="table">
+          <tr class="main">
+            <th>
+              <input
+                type="checkbox"
+                id="check-all"
+                onclick="toggleCheckboxes(this)"
+              />
+            </th>
+            <th>
+              Mã sản
+              phẩm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <i class="fas fa-sort-amount-up-alt"></i>
+            </th>
+            <th>Hình ảnh</th>
+            <th>
+              Tên sản
+              phẩm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <i class="fas fa-sort-amount-up-alt"></i>
+            </th>
+            <th>
+              Giá bán
+              <i class="fas fa-sort-amount-up-alt"></i>
+            </th>
+            <th>
+              Kho
+              hàng&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </th>
+            <th>
+              Thứ tự hiển thị
+              <i class="fas fa-sort-amount-up-alt"></i>
+            </th>
+            <th>
+              Hiển thị trên app &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <i class="fas fa-sort-amount-up-alt"></i>
+            </th>
+            <th>
+              Trạng thái &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <i class="fas fa-sort-amount-up-alt"></i>
+            </th>
+
+            <th>Hành động</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
       </table>
-        <script src="java.js">
-        </script>
+      <script src="java.js"></script>
     </form>
   </body>
 </html>
